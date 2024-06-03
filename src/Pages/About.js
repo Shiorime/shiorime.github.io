@@ -28,6 +28,13 @@ export default function About() {
                     <li><p>Tekken 8</p></li>
                     <li><p>Guilty Gear Strive</p></li>
                 </ul>
+
+                <p className="title">Gacha Games I play:</p>
+                <ul className="list">
+                    <li><p>Genshin Impact</p></li>
+                    <li><p>Honkai: Star Rail</p></li>
+                    <li><p>Wuthering Waves</p></li>
+                </ul>
             </div>
         </>
     )
