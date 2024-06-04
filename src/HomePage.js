@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react'
 
-import "./HomePage.css"
-
 export default function HomePage() {
     const [counter, setCounter] = useState(0);
     const incrementCounter = () => {

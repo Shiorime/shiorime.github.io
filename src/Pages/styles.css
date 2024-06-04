@@ -19,20 +19,22 @@ h1
     display: flex;
     padding-top: 20px;
     color: white;
-    position: fixed;
     margin-top: 30px;
     font-size: 25px;
-    justify-content: center;
     width: 100%;
+    justify-content: center;
 }
 
 #name, #email
 {
     width: 250px;
+    margin: auto;
+    text-align: center;
 }
 
 textarea
 {
+    margin: auto;
     resize: none;
     height: 100px;
     width: 250px;
@@ -40,17 +42,14 @@ textarea
 
 select
 {
+    margin: auto;
     width: 250px;
 }
 
 fieldset label
 {
+    margin: auto;
     text-align: left;
-}
-
-.terms
-{
-    font-size: 10px;
 }
 
 .labels

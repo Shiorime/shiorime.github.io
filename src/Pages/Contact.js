@@ -6,6 +6,8 @@ export default function Contact() {
     <>
       <h1>Contact</h1>
 
+      <p>Contact me on discord. Username is shiorime.</p>
+
       <div className="input-wrapper">
         <form>
           <label for="name">Name:</label><br />
