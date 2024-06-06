@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import { CalculateTimeLeft, CheckIfUp } from './utils/CalculateTime';
 
 export default function HomePage() {
+    //Counter
     const [counter, setCounter] = useState(0);
     const incrementCounter = () => {
         setCounter((prev) => prev + 1);
     }
 
+    //Window Width
     const [windowWidth, setWindowwidth] = useState(window.innerWidth);
     const handleResize = () => {
         setWindowwidth(window.innerWidth)
@@ -14,6 +17,30 @@ export default function HomePage() {
     useEffect(() => {
         window.addEventListener("resize", handleResize)
     }, [])
+
+    //Show Date
+    const [dateTime, setDatetime] = useState(new Date());
+
+    useEffect(() => {
+        const id = setInterval(() => setDatetime(new Date()), 1000);
+        return () => {
+            clearInterval(id);
+        }
+    }, []);
+
+    //Wuthering Waves banner
+    const deadline = new Date("6 Jun 2024 04:00:00 UTC+2");
+    const [timeLeft, setTimeLeft] = useState(CalculateTimeLeft(deadline));
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            setTimeLeft(CalculateTimeLeft(deadline));
+        }, 1000);
+
+        return () => {
+            clearTimeout(id)
+        };
+    });
 
     return (
         <>
@@ -32,6 +59,11 @@ export default function HomePage() {
                     <li><a class="videolink" href="https://www.youtube.com/watch?v=B8BgMCA2HmU">Favourite Element</a></li>
                     <li><a class="videolink" href="https://www.youtube.com/watch?v=bPYU5BT74Z8">TGR Speedrun</a></li>
                 </ul>
+            </div>
+
+            <div className="date">
+                <pre>Time now: {dateTime.toUTCString()}</pre>
+                <pre>Yinlin banner: {CheckIfUp(timeLeft)}</pre>
             </div>
 
             <div class="button">
