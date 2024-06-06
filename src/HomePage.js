@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { CalculateTimeLeft, CheckIfUp } from './utils/CalculateTime';
+import { CalculateTimeLeft, CheckIfBannerIsUp } from './utils/CalculateBannerTime';
 
 export default function HomePage() {
     //Counter
@@ -28,13 +28,27 @@ export default function HomePage() {
         }
     }, []);
 
-    //Wuthering Waves banner
+    //Wuthering Waves Current Banner
     const deadline = new Date("6 Jun 2024 04:00:00 UTC+2");
     const [timeLeft, setTimeLeft] = useState(CalculateTimeLeft(deadline));
 
     useEffect(() => {
         const id = setInterval(() => {
             setTimeLeft(CalculateTimeLeft(deadline));
+        }, 1000);
+
+        return () => {
+            clearTimeout(id)
+        };
+    });
+
+    //Wuthering Waves Next Banner
+    const nextDeadline = new Date("27 Jun 2024 04:00:00 UTC+2");
+    const [nextTimeLeft, nextSetTimeLeft] = useState(CalculateTimeLeft(deadline));
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            nextSetTimeLeft(CalculateTimeLeft(nextDeadline));
         }, 1000);
 
         return () => {
@@ -63,7 +77,8 @@ export default function HomePage() {
 
             <div className="date">
                 <pre>Time now: {dateTime.toUTCString()}</pre>
-                <pre>Yinlin banner: {CheckIfUp(timeLeft)}</pre>
+                <pre>Yinlin banner: {CheckIfBannerIsUp(timeLeft)}</pre>
+                <pre>Jinhsi banner: {CheckIfBannerIsUp(nextTimeLeft)}</pre>
             </div>
 
             <div class="button">
