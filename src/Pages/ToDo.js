@@ -42,7 +42,7 @@ export default function ToDo() {
 
   return (
     <>
-        <h1>To Do</h1>
+        <h1>To-Do</h1>
         <ul>
           <ToDoList todos={todos} toggleTodo={toggleTodo}/>
         </ul>

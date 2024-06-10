@@ -1,7 +1,8 @@
 export default function ToDoItem({ todos, toggleTodo }) {
-    function handleTodoClick() {
-        toggleTodo(todos.id);
-      }
+  function handleTodoClick() {
+    toggleTodo(todos.id);
+  }
+  
   return (
     <div>
       <label>
