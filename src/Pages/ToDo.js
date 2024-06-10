@@ -2,11 +2,11 @@ import React, { useState, useRef, useEffect } from 'react'
 import ToDoList from './ToDoList'
 import { v4 as uuidv4 } from 'uuid';
 
-const LOCAL_STORAGE_KEY = "shiorime.todos"
-
 export default function ToDo() {
   const [todos, setTodos] = useState([]);
   const todoNameRef = useRef();
+
+  const LOCAL_STORAGE_KEY = "shiorime.todos"
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -27,7 +27,7 @@ export default function ToDo() {
 
   function handleAddTodo(e) {
     const name = todoNameRef.current.value;
-    if (name == "")
+    if (name === "")
       return;
     setTodos(prevTodos => {
       return [...prevTodos, { id: uuidv4(), name: name, complete: false}]
@@ -38,8 +38,9 @@ export default function ToDo() {
   function handleClearTodos() {
     const newTodos = todos.filter(todo => !todo.complete);
     setTodos(newTodos);
-
   }
+
+  
 
   return (
     <>
