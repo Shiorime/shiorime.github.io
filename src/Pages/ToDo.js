@@ -6,18 +6,6 @@ export default function ToDo() {
   const [todos, setTodos] = useState([]);
   const todoNameRef = useRef();
 
-  const LOCAL_STORAGE_KEY = "shiorime.todos"
-
-  useEffect(() => {
-    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (storedTodos.length > 0)
-      setTodos(storedTodos)
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-  }, [todos])
-
   function toggleTodo(id) {
     const newTodos = [...todos];
     const todo = newTodos.find(todo => todo.id === id);
