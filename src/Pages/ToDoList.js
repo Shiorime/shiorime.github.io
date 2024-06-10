@@ -1,4 +1,4 @@
-import ToDoItems from './ToDoItem'
+import ToDoItem from './ToDoItem'
 
 export default function ToDoList({ todos, toggleTodo }) {
   return (
