@@ -40,8 +40,6 @@ export default function ToDo() {
     setTodos(newTodos);
   }
 
-  
-
   return (
     <>
         <h1>To Do</h1>
