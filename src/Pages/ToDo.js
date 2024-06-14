@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import ToDoList from './ToDoList'
 import { v4 as uuidv4 } from 'uuid';
 
@@ -37,7 +37,7 @@ export default function ToDo() {
         <input ref={todoNameRef} type="text" />
         <button onClick={handleAddTodo}>Add To-Do</button>
         <button onClick={handleClearTodos}>Clear Completed To-Dos</button>
-        <div>{todos.filter(todo => !todo.complete).length} left to do</div>
+        <div className="todo-left">{todos.filter(todo => !todo.complete).length} left to do</div>
     </>
   )
 }
