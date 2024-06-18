@@ -1,7 +1,37 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { CalculateTimeLeft, CheckIfBannerIsUp } from './utils/CalculateBannerTime';
+import { useHover } from "./utils/useHover";
 
 export default function HomePage() {
+    //Hacker Letters
+    const letters = "abcdefghijklmnopqrstuvwxuz";
+    const hackerRef = useRef();
+    function hackerLetters() {
+        let iterations = 0;
+
+        const interval = setInterval(() => {
+            if (hackerRef.current) {
+                hackerRef.current.innerText = hackerRef.current.innerText.split("")
+                .map((letter, index) => {
+                    if (index < iterations) {
+                        return hackerRef.current.dataset.value[index];
+                    }
+                    return letters[Math.floor(Math.random() * 26)]
+                })
+                .join("");
+    
+                if (iterations >= 9) clearInterval(interval);
+    
+                iterations += 1 / 3;
+            }
+
+        }, 30);
+        return "Shiorime";
+    }
+
+    const isHovered = useHover(".hometitle");
+    const text = isHovered ? hackerLetters() : "Shiorime";
+
     //Counter
     const [counter, setCounter] = useState(0);
     const incrementCounter = () => {
@@ -58,6 +88,7 @@ export default function HomePage() {
 
     return (
         <>
+            <h1 className="hometitle" ref={hackerRef} data-value="Shiorime">{text}</h1>
             <img className="avatar" src={"./images/belfastavatar.png"} alt="" />
             <p>Hi, I'm Shiori but I also go by Shizu. Just a guy who likes programming and anime.</p>
             <p>Also I like playing fighting games such as (mostly) Tekken and sometimes in other FGs.</p>

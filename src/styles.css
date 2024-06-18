@@ -38,9 +38,46 @@ img
     align-items: center;
 }
 
-.date
+iframe
 {
-    margin: 30px;
+    border: 0;
+}
+
+.hometitle
+{
+    font-size: 30px;
+    font-family: monospace;
+    width: -moz-fit-content;
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.avatar
+{
+    max-width: 250px;
+    max-height: 250px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 50%;
+    animation: avatarHoverOut 0.1s forwards;
+}
+
+.avatar:hover
+{
+    animation: avatarHoverIn 0.1s forwards;
+}
+
+@keyframes avatarHoverIn {
+    from {border-radius: 20%;}
+    to {border-radius: 0;}
+}
+
+@keyframes avatarHoverOut {
+    from {border-radius: 0;}
+    to {border-radius: 20%;}
 }
 
 .links
@@ -74,7 +111,6 @@ img
     text-decoration: underline;
 }
 
-
 .list
 {
     list-style-type: none;
@@ -83,25 +119,41 @@ img
     margin-bottom: 5px;
 }
 
-.avatar
+.date
 {
-    max-width: 250px;
-    max-height: 250px;
-    display: block;
-    margin: auto;
-    margin-bottom: 10px;
-    width: 50%;
-    border-radius: 20%;
+    margin: 30px;
 }
 
-.avatar:hover
+.timenow
 {
-    animation: avatarHoverIn 0.1s forwards;
+    color: white;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: timeRainbow 30s linear infinite;
 }
 
-@keyframes avatarHoverIn {
-    from {border-radius: 20%;}
-    to {border-radius: 0;}
+@keyframes timeRainbow
+{
+    to
+    {
+        background-position: 1000vh;
+    }
+}
+
+.banner
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bannerimage
+{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
 .button
@@ -112,17 +164,7 @@ img
     margin-top: 20px;
 }
 
-.nav
-{
-    background-color: #333;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    height: 50px;
-    margin-bottom: 20px;
-}
+/* Nav Bar */
 
 .site-home
 {
@@ -140,6 +182,18 @@ img
     padding: 0;
     margin: 0;
     display: flex;
+}
+
+.nav
+{
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    height: 50px;
+    margin-bottom: 20px;
 }
 
 .nav ul
@@ -183,6 +237,9 @@ img
     to {background-color: #777;}
 }
 
+/* Nav End */
+
+/* To Do Page */
 .todo-left
 {
     color: white;
@@ -193,34 +250,4 @@ img
     color: white;
 }
 
-.banner
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.bannerimage
-{
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-
-.timenow
-{
-    color: white;
-    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: timeRainbow 30s linear infinite;
-}
-
-@keyframes timeRainbow
-{
-    to
-    {
-        background-position: 1000vh;
-    }
-}
+/* To Do End */

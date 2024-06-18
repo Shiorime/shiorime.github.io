@@ -10,22 +10,22 @@ export default function Contact() {
 
       <div className="input-wrapper">
         <form>
-          <label for="name">Name:</label><br />
+          <label htmlFor="name">Name:</label><br />
           <input type="text" name="name" id="name"></input> <br />
 
           <br />
 
-          <label for="email">Email:</label><br />
+          <label htmlFor="email">Email:</label><br />
           <input type="text" name="email" id="email"></input> <br />
 
           <br />
 
-          <label for="message">Message:</label><br />
+          <label htmlFor="message">Message:</label><br />
           <textarea name="message" id="message"></textarea><br />
 
           <br />
 
-          <label for="priority">Priority</label><br />
+          <label htmlFor="priority">Priority</label><br />
           <select name="priority" id="priority">
             <option value="1">Low</option>
             <option value="2">Medium</option>
