@@ -76,9 +76,15 @@ export default function HomePage() {
             </div>
 
             <div className="date">
-                <pre>Time now: {dateTime.toUTCString()}</pre>
-                <pre>Yinlin banner: {CheckIfBannerIsUp(timeLeft)}</pre>
-                <pre>Jinhsi banner: {CheckIfBannerIsUp(nextTimeLeft)}</pre>
+                <pre className="timenow">Time now: {dateTime.toUTCString()}</pre>
+                <div className="banner">
+                    <img className="bannerimage" src={"./images/wuwaicons/yinlinicon.webp"} alt="" />
+                    <pre>Yinlin banner: {CheckIfBannerIsUp(timeLeft)}</pre>
+                </div>
+                <div className="banner">
+                <img className="bannerimage" src={"./images/wuwaicons/jinhsiicon.webp"} alt="" />
+                    <pre>Jinhsi banner: {CheckIfBannerIsUp(nextTimeLeft)}</pre>
+                </div>
             </div>
 
             <div className="button">

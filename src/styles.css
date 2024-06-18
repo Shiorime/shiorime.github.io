@@ -31,12 +31,6 @@ li
     margin: 10px;
 }
 
-li a
-{
-    color:blue;
-    text-decoration: none;
-}
-
 img
 {
     display: flex;
@@ -57,9 +51,21 @@ img
     list-style-type: none;
 }
 
-.link, .links
+.link
 {
     color: silver;
+}
+
+.link:hover, .videolink:hover, .links
+{
+    color: silver;
+    animation: hoverLink 0.5s forwards;
+}
+
+@keyframes hoverLink
+{
+    from {color: silver;}
+    to {color: purple;}
 }
 
 .videolink
@@ -88,6 +94,16 @@ img
     border-radius: 20%;
 }
 
+.avatar:hover
+{
+    animation: avatarHoverIn 0.1s forwards;
+}
+
+@keyframes avatarHoverIn {
+    from {border-radius: 20%;}
+    to {border-radius: 0;}
+}
+
 .button
 {
     display: flex;
@@ -111,6 +127,12 @@ img
 .site-home
 {
     font-size: 2rem;
+}
+
+.site-home:hover
+{
+    background-color: #777;
+    animation: hoverNav 0.5s forwards;
 }
 
 .site-other
@@ -152,6 +174,13 @@ img
 .nav li:hover
 {
     background-color: #777;
+    animation: hoverNav 0.5s forwards;
+}
+
+@keyframes hoverNav
+{
+    from {background-color: #333;}
+    to {background-color: #777;}
 }
 
 .todo-left
@@ -162,4 +191,36 @@ img
 .todo-name
 {
     color: white;
+}
+
+.banner
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bannerimage
+{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.timenow
+{
+    color: white;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: timeRainbow 30s linear infinite;
+}
+
+@keyframes timeRainbow
+{
+    to
+    {
+        background-position: 1000vh;
+    }
 }
