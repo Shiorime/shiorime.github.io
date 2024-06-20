@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { CalculateTimeLeft, CheckIfBannerIsUp } from './utils/CalculateBannerTime';
 import { useHover } from "./utils/useHover";
+import { ShowDate, TranslateDateTimeDay } from './utils/TranslateDateTimeToString';
 
 export default function HomePage() {
     //Hacker Letters
@@ -117,7 +118,7 @@ export default function HomePage() {
             </div>
 
             <div className="date">
-                <pre className="timenow">Time now: {dateTime.toUTCString()}</pre>
+                <pre className="timenow">Time now: {TranslateDateTimeDay(dateTime.getDay())}, {ShowDate(dateTime)}</pre>
                 <div className="banner" onClick={setCurrentBannerFormat}>
                     <img className="bannerimage" src={"./images/wuwaicons/yinlinicon.webp"} alt="" />
                     <pre>Yinlin banner: {CheckIfBannerIsUp(timeLeft, currentFormat)}</pre>
