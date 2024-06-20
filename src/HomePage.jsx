@@ -61,6 +61,7 @@ export default function HomePage() {
     //Wuthering Waves Current Banner
     const deadline = new Date("6 Jun 2024 04:00:00 UTC+2");
     const [timeLeft, setTimeLeft] = useState(CalculateTimeLeft(deadline));
+    const [currentFormat, setCurrentFormat] = useState(true);
 
     useEffect(() => {
         const id = setInterval(() => {
@@ -72,9 +73,14 @@ export default function HomePage() {
         };
     });
 
+    const setCurrentBannerFormat = () => {
+        setCurrentFormat(!currentFormat);
+    }
+
     //Wuthering Waves Next Banner
     const nextDeadline = new Date("27 Jun 2024 04:00:00 UTC+2");
     const [nextTimeLeft, nextSetTimeLeft] = useState(CalculateTimeLeft(deadline));
+    const [nextFormat, setNextFormat] = useState(true);
 
     useEffect(() => {
         const id = setInterval(() => {
@@ -85,6 +91,10 @@ export default function HomePage() {
             clearTimeout(id)
         };
     });
+
+    const setNextBannerFormat = () => {
+        setNextFormat(!nextFormat);
+    }
 
     return (
         <>
@@ -108,13 +118,13 @@ export default function HomePage() {
 
             <div className="date">
                 <pre className="timenow">Time now: {dateTime.toUTCString()}</pre>
-                <div className="banner">
+                <div className="banner" onClick={setCurrentBannerFormat}>
                     <img className="bannerimage" src={"./images/wuwaicons/yinlinicon.webp"} alt="" />
-                    <pre>Yinlin banner: {CheckIfBannerIsUp(timeLeft)}</pre>
+                    <pre>Yinlin banner: {CheckIfBannerIsUp(timeLeft, currentFormat)}</pre>
                 </div>
-                <div className="banner">
+                <div className="banner" onClick={setNextBannerFormat}>
                 <img className="bannerimage" src={"./images/wuwaicons/jinhsiicon.webp"} alt="" />
-                    <pre>Jinhsi banner: {CheckIfBannerIsUp(nextTimeLeft)}</pre>
+                    <pre>Jinhsi banner: {CheckIfBannerIsUp(nextTimeLeft, nextFormat)}</pre>
                 </div>
             </div>
 

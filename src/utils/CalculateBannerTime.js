@@ -13,9 +13,12 @@ export function CalculateTimeLeft(deadline) {
     return timeLeft;
 }
 
-export function CheckIfBannerIsUp(timeLeft) {
+export function CheckIfBannerIsUp(timeLeft, format) {
+
     if (Object.keys(timeLeft).length > 0) {
-        return `In ${timeLeft.days} days ${timeLeft.hours} hours ${timeLeft.minutes} minutes ${timeLeft.seconds} ${timeLeft.seconds !== 1 ? "seconds" : "second"}`;
+        if (format)
+            return `In ${timeLeft.days}d ${timeLeft.hours}h ${timeLeft.minutes}m ${timeLeft.seconds}s`
+        else return `In ${timeLeft.days} days ${timeLeft.hours} hours ${timeLeft.minutes} minutes ${timeLeft.seconds} ${timeLeft.seconds !== 1 ? "seconds" : "second"}`;
     }
     else return `Banner is up!`
 }

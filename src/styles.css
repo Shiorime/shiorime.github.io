@@ -54,6 +54,8 @@ iframe
     margin-bottom: 10px;
 }
 
+/* Avatar Start */
+
 .avatar
 {
     max-width: 250px;
@@ -79,6 +81,10 @@ iframe
     from {border-radius: 0;}
     to {border-radius: 20%;}
 }
+
+/* Avatar End */
+
+/* Links Start */
 
 .links
 {
@@ -119,6 +125,10 @@ iframe
     margin-bottom: 5px;
 }
 
+/* Links End */
+
+/* Time Now Start */
+
 .date
 {
     margin: 30px;
@@ -142,11 +152,17 @@ iframe
     }
 }
 
+/* TIme Now End */
+
+/* Banner Start */
+
 .banner
 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
 }
 
 .bannerimage
@@ -155,6 +171,25 @@ iframe
     height: 50px;
     margin-right: 10px;
 }
+
+.bannerimage:hover
+{
+    animation: bannerImageHover 0.1s forwards;
+}
+
+@keyframes bannerImageHover
+{
+    from {
+        width: 50px;
+        height: 50px;
+    }
+    to {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+/* Banner End */
 
 .button
 {
