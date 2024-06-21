@@ -11,7 +11,6 @@ export default function About() {
                     <li><p>C++</p></li>
                     <li><p>C#</p></li>
                     <li><p>Python</p></li>
-                    <li><p></p></li>
                 </ul>
 
                 <p className="title">Currently Learning:</p>
@@ -20,7 +19,7 @@ export default function About() {
                     <li><p>CSS</p></li>
                     <li><p>React</p></li>
                     <li><p>PHP</p></li>
-                    <li><p></p></li>
+                    <li><p>JavaScript</p></li>
                 </ul>
 
                 <p className="title">Fighting Games I play:</p>

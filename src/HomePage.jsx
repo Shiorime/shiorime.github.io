@@ -31,7 +31,7 @@ export default function HomePage() {
     }
 
     const isHovered = useHover(".hometitle");
-    const text = isHovered ? hackerLetters() : "Shiorime";
+    const homeTitle = isHovered ? hackerLetters() : "Shiorime";
 
     //Counter
     const [counter, setCounter] = useState(0);
@@ -99,7 +99,7 @@ export default function HomePage() {
 
     return (
         <>
-            <h1 className="hometitle" ref={hackerRef} data-value="Shiorime">{text}</h1>
+            <h1 className="hometitle" ref={hackerRef} data-value="Shiorime">{homeTitle}</h1>
             <img className="avatar" src={"./images/belfastavatar.png"} alt="" />
             <p>Hi, I'm Shiori but I also go by Shizu. Just a guy who likes programming and anime.</p>
             <p>Also I like playing fighting games such as (mostly) Tekken and sometimes in other FGs.</p>

@@ -1,3 +1,13 @@
+:root {
+    --background-rgb: 15 15 15;
+    
+    --blue-rgb: 33 150 243;
+    --primary-rgb: var(--blue-rgb);
+    
+    --blob-color-1: rgb(var(--blue-rgb));
+    --blob-color-2: dodgerblue;
+  }
+
 body
 {
     background-color: #181A1B;
@@ -36,11 +46,6 @@ img
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
-
-iframe
-{
-    border: 0;
 }
 
 .hometitle
@@ -273,16 +278,3 @@ iframe
 }
 
 /* Nav End */
-
-/* To Do Page */
-.todo-left
-{
-    color: white;
-}
-
-.todo-name
-{
-    color: white;
-}
-
-/* To Do End */
