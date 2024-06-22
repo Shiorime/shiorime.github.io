@@ -60,9 +60,11 @@ export default function HomePage() {
     });
 
     //Wuthering Waves Current Banner
-    const deadline = new Date("6 Jun 2024 04:00:00 UTC+2");
+    const deadline = new Date("28 Jun 2024 10:00:00 UTC+8");
     const [timeLeft, setTimeLeft] = useState(CalculateTimeLeft(deadline));
     const [currentFormat, setCurrentFormat] = useState(true);
+    const currentBannerName = "Jinhsi"
+    const currentBannerImage = "./images/wuwaicons/jinhsiicon.webp";
 
     useEffect(() => {
         const id = setInterval(() => {
@@ -79,9 +81,11 @@ export default function HomePage() {
     }
 
     //Wuthering Waves Next Banner
-    const nextDeadline = new Date("27 Jun 2024 04:00:00 UTC+2");
+    const nextDeadline = new Date("19 Jul 2024 10:00:00 UTC+8");
     const [nextTimeLeft, nextSetTimeLeft] = useState(CalculateTimeLeft(deadline));
     const [nextFormat, setNextFormat] = useState(true);
+    const nextBannerName = "Changli"
+    const nextBannerImage = "./images/wuwaicons/changliicon.webp";
 
     useEffect(() => {
         const id = setInterval(() => {
@@ -120,12 +124,12 @@ export default function HomePage() {
             <div className="date">
                 <pre className="timenow">Time now: {TranslateDateTimeDay(dateTime.getDay())}, {ShowDate(dateTime)}</pre>
                 <div className="banner" onClick={setCurrentBannerFormat}>
-                    <img className="bannerimage" src={"./images/wuwaicons/yinlinicon.webp"} alt="" />
-                    <pre>Yinlin banner: {CheckIfBannerIsUp(timeLeft, currentFormat)}</pre>
+                    <img className="bannerimage" src={currentBannerImage} alt="" />
+                    <pre>{currentBannerName} banner: {CheckIfBannerIsUp(timeLeft, currentFormat)}</pre>
                 </div>
                 <div className="banner" onClick={setNextBannerFormat}>
-                <img className="bannerimage" src={"./images/wuwaicons/jinhsiicon.webp"} alt="" />
-                    <pre>Jinhsi banner: {CheckIfBannerIsUp(nextTimeLeft, nextFormat)}</pre>
+                <img className="bannerimage" src={nextBannerImage} alt="" />
+                    <pre>{nextBannerName} banner: {CheckIfBannerIsUp(nextTimeLeft, nextFormat)}</pre>
                 </div>
             </div>
 

@@ -35,7 +35,13 @@ iframe
 
 /* Video End */
 
-/* Background Start */
+/* Cards Start */
+
+.cards-container
+{
+    display: grid;
+    gap: 10px;
+}
 
 .screen {
     width: 500px;
@@ -76,7 +82,7 @@ iframe
 
 .screen > .screen-image
 {
-    background-image: url("https://images.unsplash.com/photo-1515266591878-f93e32bc5937?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-image: url("../images/mountain-range.webp");
     height: 100%;
     width: 100%;
     background-size: 300%;
@@ -140,7 +146,43 @@ iframe
     }
 }
 
-/* Background End */
+.robin-card
+{
+    width: 500px;
+    display: flex;
+    border: 3px solid rgb(var(--primary-rgb) / 80%);
+    aspect-ratio: 10 / 16;
+    border-radius: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.robin-card > img {  
+    height: 100%;
+    width: 100%;
+    scale: 1;
+    border-radius: inherit;
+  }
+
+.robin-card:hover > img
+{
+    animation: pulse 800ms ease-in-out;
+}
+
+@keyframes pulse
+{
+    from, to {
+        scale: 1;
+        filter: blur(0);
+    }
+
+    50% {
+        scale: 1.08;
+        filter: blur(1.5px);
+    }
+}
+
+/* Cards End */
 
 /* About Start */
 
