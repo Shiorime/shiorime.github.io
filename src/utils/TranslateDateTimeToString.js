@@ -37,6 +37,8 @@ export function TranslateDateTimeMonth(month) {
 
 export function TranslateDateTimeDay(day) {
     switch (day) {
+        case 0:
+            return "Sun";
         case 1:
             return "Mon";
         case 2:
@@ -49,7 +51,5 @@ export function TranslateDateTimeDay(day) {
             return "Fri";
         case 6:
             return "Sat";
-        case 7:
-            return "Sun";
     }
 }

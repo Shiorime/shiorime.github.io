@@ -182,6 +182,57 @@ iframe
     }
 }
 
+.yinlin-card
+{
+    width: 500px;
+    display: flex;
+    border: 3px solid rgb(var(--primary-rgb) / 80%);
+    aspect-ratio: 10 / 16;
+    border-radius: 1rem;
+    background-color: rgb(var(--primary-rgb) / 15%);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.yinlin-image
+{
+    background-image: url("../images/yinlin/yinlincard.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: 175%;
+    background-position: 30% 35%;
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.yinlin-image::before
+{
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 100%;
+    width: 200px;
+    left: -430px;
+    transform: skewX(-30deg);
+}
+
+.yinlin-image:hover:before
+{
+    animation: slide 1s;
+}
+
+@keyframes slide
+{
+    from {
+        left: -430px;
+    }
+    to {
+        left: 720px;
+    }
+}
+
 /* Cards End */
 
 /* About Start */
