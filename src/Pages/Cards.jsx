@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
 import "./styles.css"
 
-export default function Cards() {
-  const images = ["../images/yinlin/yinlincard.jpg", "../images/yinlin/yinlincloseup.jpg", "../images/yinlin/yinlinsit.jpg"]
-  const backgroundPositions = ["30% 35%", "100% 100%", "55% 35%"];
-  const backgroundSizes = ["175%", "100%", "200%", "100%"]
-  const [randomNum, setRandomNum] = useState(Math.floor(Math.random() * images.length));
-  const [randomImage, setRandomImage] = useState(images[randomNum])
-  const [randomPosition, setRandomPosition] = useState(backgroundPositions[randomNum])
-  const [randomSize, setRandomSize] = useState(backgroundSizes[randomNum]);
+const images = ["../images/yinlin/yinlincard.jpg", "../images/yinlin/yinlinsit.jpg", "../images/yinlin/yinlincloseup.jpg"]
+const backgroundPositions = ["30% 35%",  "55% 35%", "100% 100%"];
+const backgroundSizes = ["175%", "200%", "100%"]
 
-  const setImage = () => {
-    const newRandomNum = Math.floor(Math.random() * images.length);
-    setRandomNum(newRandomNum);
-    setRandomImage(images[newRandomNum]);
-    setRandomPosition(backgroundPositions[newRandomNum]);
-    setRandomSize(backgroundSizes[newRandomNum]);
+export default function Cards() {
+  const [imageNumber, setImageNumber] = useState(0);
+  const [yinlinImage, setYinlinImage] = useState(images[imageNumber])
+  const [yinlinPosition, setYinlinPosition] = useState(backgroundPositions[imageNumber])
+  const [yinlinSize, setYinlinSize] = useState(backgroundSizes[imageNumber]);
+
+  const setYinlinCard = () => {
+    const num = (imageNumber + 1) % images.length;
+    setImageNumber(num);
+    setYinlinImage(images[num]);
+    setYinlinPosition(backgroundPositions[num]);
+    setYinlinSize(backgroundSizes[num]);
   };
 
   return (
@@ -31,7 +32,7 @@ export default function Cards() {
         </div>
 
         <div className="yinlin-card">
-          <div className="yinlin-image" onMouseOver={setImage} style={{ backgroundImage: `url(${randomImage})`, backgroundPosition: `${randomPosition}`, backgroundSize: `${randomSize}` }} />
+          <div className="yinlin-image" onMouseOver={setYinlinCard} style={{ backgroundImage: `url(${yinlinImage})`, backgroundPosition: `${yinlinPosition}`, backgroundSize: `${yinlinSize}` }} />
         </div>
       </div>
     </>

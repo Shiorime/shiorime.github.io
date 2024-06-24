@@ -207,6 +207,11 @@ iframe
     overflow: hidden;
 }
 
+.yinlin-image:hover
+{
+    animation: fadeIn 500ms ease-in;
+}
+
 .yinlin-image::before
 {
     content: "";
@@ -232,6 +237,11 @@ iframe
         left: 720px;
     }
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0.1; }
+    100% { opacity: 1; }
+  }
 
 /* Cards End */
 
