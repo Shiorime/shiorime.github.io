@@ -4,6 +4,7 @@ import ToDo from "./Pages/ToDo"
 import About from "./Pages/About"
 import Video from "./Pages/Video"
 import Cards from "./Pages/Cards"
+import SVG from "./Pages/SVG"
 import Contact from "./Pages/Contact"
 import { Route, Routes } from "react-router-dom"
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/ToDo" element={<ToDo />} />
         <Route path="/Video" element={<Video />} />
         <Route path="/Cards" element={<Cards />} />
+        <Route path="/SVG" element={<SVG />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>

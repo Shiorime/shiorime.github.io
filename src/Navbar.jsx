@@ -9,6 +9,7 @@ export default function Navbar() {
         <CustomLink to="/ToDo">To-Do</CustomLink>
         <CustomLink to="/Video">Video</CustomLink>
         <CustomLink to="/Cards">Cards</CustomLink>
+        <CustomLink to="/SVG">SVG</CustomLink>
         <CustomLink to="/About">About</CustomLink>
         <CustomLink to="/Contact">Contact</CustomLink>
       </ul>
