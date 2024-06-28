@@ -60,7 +60,7 @@ export default function HomePage() {
     });
 
     //Wuthering Waves Current Banner
-    const deadline = new Date("28 Jun 2024 10:00:00 UTC+8");
+    const deadline = new Date("28 Jun 2024 13:00:00 UTC+8");
     const [timeLeft, setTimeLeft] = useState(CalculateTimeLeft(deadline));
     const [currentFormat, setCurrentFormat] = useState(true);
     const currentBannerName = "Jinhsi"
