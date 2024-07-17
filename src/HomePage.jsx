@@ -81,7 +81,7 @@ export default function HomePage() {
     }
 
     //Wuthering Waves Next Banner
-    const nextDeadline = new Date("19 Jul 2024 10:00:00 UTC+8");
+    const nextDeadline = new Date("22 Jul 2024 10:00:00 UTC+8");
     const [nextTimeLeft, nextSetTimeLeft] = useState(CalculateTimeLeft(deadline));
     const [nextFormat, setNextFormat] = useState(true);
     const nextBannerName = "Changli"
