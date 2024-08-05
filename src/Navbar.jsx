@@ -8,6 +8,7 @@ export default function Navbar() {
       <ul className="site-other">
         <CustomLink to="/ToDo">To-Do</CustomLink>
         <CustomLink to="/Video">Video</CustomLink>
+        <CustomLink to="/ThreeByThree">3x3</CustomLink>
         <CustomLink to="/Cards">Cards</CustomLink>
         <CustomLink to="/SVG">SVG</CustomLink>
         <CustomLink to="/About">About</CustomLink>
