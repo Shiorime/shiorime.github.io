@@ -2,13 +2,17 @@ import React, { useState } from 'react'
 import "./styles.css"
 
 const images = ["https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20698-YZIYor2zW3Ta.png",
-                "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21455-hTd6T0s9fvYj.jpg"
+                "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21455-hTd6T0s9fvYj.jpg",
+                "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx136430-YrQ8nBDW7gT0.jpg"
 ]
 const backgroundPositions = ["30% 50%", 
-                             "55% 35%"
+                             "55% 35%",
+                             "50% 50%"
+                             
 ];
 const animeTitles = ["Yahari Ore no Seishun Love Come wa Machigatteiru.",
-                     "NEW GAME!"
+                     "NEW GAME!",
+                     "Vinland Saga Season 2"
 ]
 
 export default function ThreeByThree() {
@@ -37,7 +41,7 @@ export default function ThreeByThree() {
         <div className="three-by-three-container">
           <div onClick={() => setBigDisplay(0)} className="three-by-three-element"></div>
           <div onClick={() => setBigDisplay(1)} className="three-by-three-element"></div>
-          <div className="three-by-three-element"></div>
+          <div onClick={() => setBigDisplay(2)} className="three-by-three-element"></div>
           <div className="three-by-three-element"></div>
           <div className="three-by-three-element"></div>
           <div className="three-by-three-element"></div>
