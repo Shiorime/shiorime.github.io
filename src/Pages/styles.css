@@ -46,11 +46,11 @@ iframe
 .three-by-three {
     background-color: silver;
     padding: 10px;
-    margin: 0px;
+    margin: 10px;
     border: 0px;
     width: fit-content;
     display: grid;
-    grid-template-columns: 335px 325px;
+    grid-template-columns: 335px 320px;
 }
 
 .three-by-three-container {
@@ -89,6 +89,20 @@ iframe
     background-size: 100%;
     transition: opacity 200ms ease-in-out;
     opacity: 1;
+}
+
+.anime-title {
+    margin: 5px;
+    text-align: center;
+    transition: opacity 200ms ease-in-out;
+    opacity: 1;
+}
+
+.anime-title-wrapper {
+    grid-column: span 2;
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
 }
 
 /* 3x3 End */
