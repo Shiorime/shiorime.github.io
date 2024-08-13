@@ -60,11 +60,11 @@ export default function HomePage() {
     });
 
     //Wuthering Waves Current Banner
-    const deadline = new Date("28 Jun 2024 13:00:00 UTC+8");
+    const deadline = new Date("15 Aug 2024 13:00:00 UTC+8");
     const [timeLeft, setTimeLeft] = useState(CalculateTimeLeft(deadline));
     const [currentFormat, setCurrentFormat] = useState(true);
-    const currentBannerName = "Jinhsi"
-    const currentBannerImage = "./images/wuwaicons/jinhsiicon.webp";
+    const currentBannerName = "Zhezhi"
+    const currentBannerImage = "./images/wuwaicons/zhezhiicon.webp";
 
     useEffect(() => {
         const id = setInterval(() => {
