@@ -60,11 +60,11 @@ export default function HomePage() {
     });
 
     //Wuthering Waves Current Banner
-    const deadline = new Date("15 Aug 2024 13:00:00 UTC+8");
+    const deadline = new Date("02 Jan 2025 13:00:00 UTC+8");
     const [timeLeft, setTimeLeft] = useState(CalculateTimeLeft(deadline));
     const [currentFormat, setCurrentFormat] = useState(true);
-    const currentBannerName = "Zhezhi"
-    const currentBannerImage = "./images/wuwaicons/zhezhiicon.webp";
+    const currentBannerName = "Carlotta"
+    const currentBannerImage = "./images/wuwaicons/CarlottaIcon.webp";
 
     useEffect(() => {
         const id = setInterval(() => {
@@ -81,11 +81,11 @@ export default function HomePage() {
     }
 
     //Wuthering Waves Next Banner
-    const nextDeadline = new Date("22 Jul 2024 10:00:00 UTC+8");
+    const nextDeadline = new Date("23 Jan 2025 10:00:00 UTC+8");
     const [nextTimeLeft, nextSetTimeLeft] = useState(CalculateTimeLeft(deadline));
     const [nextFormat, setNextFormat] = useState(true);
-    const nextBannerName = "Changli"
-    const nextBannerImage = "./images/wuwaicons/changliicon.webp";
+    const nextBannerName = "Roccia"
+    const nextBannerImage = "./images/wuwaicons/RocciaIcon.webp";
 
     useEffect(() => {
         const id = setInterval(() => {
